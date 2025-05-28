@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Site de Téléconsultation Médicale
 
 Ce projet est un site web de téléconsultation médicale développé en HTML et CSS. Il permet aux patients de prendre rendez-vous en ligne et de consulter des médecins à distance.
@@ -28,3 +29,6 @@ Ce projet est un site web de téléconsultation médicale développé en HTML et
 - HTML5
 - CSS3
 - Design responsive 
+=======
+# DevOps
+>>>>>>> ce45e6894136946b643a82ef1de9463ed9a5c51f
