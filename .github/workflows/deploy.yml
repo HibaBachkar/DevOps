@@ -1,0 +1,53 @@
+name: Deploy AlloDoc Website
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install HTMLHint
+      run: npm install -g htmlhint
+
+    - name: Install Stylelint
+      run: |
+        npm install -g stylelint
+        npm install -g stylelint-config-standard
+
+    - name: Validate HTML
+      run: |
+        htmlhint "**/*.html"
+
+    - name: Validate CSS
+      run: |
+        stylelint "**/*.css"
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      with:
+        path: '.'
+
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v2
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+        folder: . 
