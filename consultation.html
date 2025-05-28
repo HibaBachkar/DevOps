@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation - MediConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .consultation-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .video-main {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #000;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .video-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .chat-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            min-height: 300px;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+        }
+
+        .consultation-info {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+        }
+
+        .control-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .control-btn.danger {
+            background-color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .consultation-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">MediConnect</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="login.html">Connexion</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="consultation-info">
+                <h2>Consultation avec Dr. Martin</h2>
+                <p>Date: 15 Mars 2024 - 14:30</p>
+                <p>Durée: 30 minutes</p>
+            </div>
+
+            <div class="consultation-container">
+                <div class="video-section">
+                    <div class="video-container">
+                        <div class="video-main">
+                            <!-- Placeholder pour la vidéo -->
+                            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--white);">
+                                Vidéo en attente de connexion...
+                            </div>
+                        </div>
+                        <div class="video-controls">
+                            <button class="control-btn">Microphone</button>
+                            <button class="control-btn">Caméra</button>
+                            <button class="control-btn">Partage d'écran</button>
+                            <button class="control-btn danger">Terminer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-section">
+                    <div class="chat-container">
+                        <h3>Chat</h3>
+                        <div class="chat-messages">
+                            <div class="message">
+                                <p><strong>Dr. Martin:</strong> Bonjour, comment puis-je vous aider aujourd'hui ?</p>
+                            </div>
+                            <!-- Les messages s'afficheront ici -->
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" placeholder="Écrivez votre message..." class="form-control">
+                            <button class="btn btn-primary">Envoyer</button>
+                        </div>
+                    </div>
+
+                    <div class="consultation-notes card mt-2">
+                        <h3>Notes de consultation</h3>
+                        <textarea class="form-control" rows="4" placeholder="Notes de la consultation..."></textarea>
+                        <button class="btn btn-primary mt-2">Sauvegarder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>MediConnect</h3>
+                <p>Votre santé, notre priorité</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Email: contact@mediconnect.fr</p>
+                <p>Tél: 01 23 45 67 89</p>
+            </div>
+            <div>
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
